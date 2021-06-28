@@ -1,8 +1,20 @@
 import React from "react";
 
-export default function CatSprite() {
+export default function CatSprite({ catMotionState }) {
+  const styles = {
+    // transformOrigin:`${catMotionState.transform.translateX}% ${catMotionState.transform.translateX}%`,
+    transform: ` translate(${catMotionState.transform.translateX}px,${catMotionState.transform.translateY}px)
+    rotate(${catMotionState.rotate}deg)
+   `,
+  };
+  const svgStyle = {
+    display: "inline-flex",
+  };
+  console.log(styles);
   return (
     <svg
+      id="cat"
+      style={styles}
       xmlns="http://www.w3.org/2000/svg"
       width="95.17898101806641"
       height="100.04156036376953"
